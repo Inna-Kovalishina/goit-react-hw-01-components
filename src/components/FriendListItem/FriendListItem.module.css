@@ -12,7 +12,7 @@
 
 .item:hover,
 .item:focus {
-    background: #c6e6f1;
+    background: #bcf2e8;
     color: #0a0a0a;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
