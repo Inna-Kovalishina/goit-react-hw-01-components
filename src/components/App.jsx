@@ -1,3 +1,4 @@
+import { Section } from './Section/Section';
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
@@ -9,33 +10,28 @@ import transactions from '../initialData/transactions.json';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: 'auto',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        padding: '60px 15px',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
+    <>
+      <Section title={"Task 1 - Social network profile"}>
+        <Profile
+          userName={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
+      </Section>
 
-      <Profile
-        userName={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
+      <Section title={"Task 2- Statistics Section"}>
+        <Statistics title="Upload stats" stats={data}/>
+      </Section>
 
-      <Statistics title="Upload stats" stats={data} />
-      
-      <FriendList friends={friends} /> 
-      
-      <TransactionHistory items={transactions} />
-      
-    </div>
+      <Section title={"Task 3 - Friends list"}>
+        <FriendList friends={friends}/> 
+      </Section>
+
+      <Section title={"Task 4 - Transaction History"}>
+        <TransactionHistory items={transactions}/>
+      </Section>
+    </>
   );
 };
